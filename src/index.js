@@ -1,14 +1,28 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { RunDayCount } from './components/RunDayCount'
+import './stylesheets/ui.scss'
+// import { RunDayList } from './components/RunDayList'
+import { App } from './components/App'
+import { Whoops404 } from './components/Whoops404'
+import { Router, Route, hashHistory } from 'react-router'
 
 window.React = React;
 
-render( <
-    RunDayCount total = { 50 }
-    gym = { 20 }
-    beach = { 10 }
-    goal = { 100 }
-    / > ,
-    document.getElementById('react-container')
-)
+render(
+        ( < Router history = { hashHistory } >
+            <
+            Route path = "/"
+            component = { App }
+            /> <
+            Route path = "list-days"
+            component = { App }
+            /> <
+            Route path = "add-day"
+            component = { App }
+            /> <
+            Route path = "*"
+            component = { Whoops404 }
+            /> <
+            /Router>),
+            document.getElementById('react-container')
+        )

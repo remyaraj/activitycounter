@@ -3,6 +3,10 @@ import '../stylesheets/ui.scss'
 
 export const RunDayCount = React.createClass({
 
+    getDefaultProps() {
+
+    },
+
     percentToDecimal(decimal) {
         return ((decimal * 100) + '%')
     },
@@ -18,22 +22,22 @@ export const RunDayCount = React.createClass({
             div className = "total-days" >
             <
             span > { this.props.total } < /span> <
-            span > Days < /span> <
-            /div> <
+            span > Days < /span> < /
+            div > <
             div className = "gym-days" >
             <
             span > { this.props.gym } < /span> <
-            span > Days < /span> <
-            /div> <
+            span > Days < /span> < /
+            div > <
             div className = "beach-days" >
             <
             span > { this.props.beach } < /span> <
-            span > Days < /span> <
-            /div> <
+            span > Days < /span> < /
+            div > <
             div >
             <
-            span > { this.calculateGoalProgress(this.props.total, this.props.goal) } < /span> <
-            /div> <
+            span > { this.calculateGoalProgress(this.props.total, this.props.goal) } < /span> < /
+            div > <
             /div>
         )
     }
